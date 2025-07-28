@@ -1,0 +1,148 @@
+MERN stack:
+
+Design: Canva(Poster based), Figma(Web app based)
+DB: MongoDB
+Frontend: Reactjs
+Backend: Nodejs(Expressjs)
+API test tool: Postman
+Deploy Cloud server: AWS
+IDE: vscode OR vscommunity
+VCS tool: git, github
+Improve User's experience(UX) with beautiful alert: notistack (npm i notistack //do this under the folder frontend)
+)
+Learning notes:
+Firstly, download the Nodejs, vscode
+Secondly, create directories for full stack and backend&frontend two folders inside.
+Thirdly, cd to backend folder and type npm init -y to generate a package.json file there. Then, add "type": "module", "main": "index.js: in the first few rows. Also, change the "test" in scripts to two attributes: "start": "node index.js", "dev": nodemon index.js". After this, we move down and replace description with "dependencies": { "express": "^4.21.2", "nodemon": "^2.0.22"} to decide the dependencies versions above or equal to the specified one.
+Fourthly, we type npm i express nodemon to generate a package-lock.json file to finish the package downloaded(node modules folder) and sync.
+*****Init ops above
+
+*****Next step below:
+create a index.js file and add code:
+import express from "express";
+const app = express();
+
+Then create another file named config.js and add code:
+export const PORT = 5555;
+
+Next we back to the index.js file and add some codes for invoke the PORT
+import {PORT} from "./config.js";
+
+#The code below is under the const app = express() code line.
+app.listen(PORT, ()=> {
+    console.log(`App is listening to port: ${PORT}`); #be careful bout '`' not '''
+});
+
+Then we type the code: npm run dev 
+If we can listening to the port that means our app runs successfully.
+*****Detect if our app runs well above
+
+*****Next step below:
+create our first http route
+add code below into the file index.js
+
+app.get('/', (request, response) => {
+    console.log(request)
+    return response.status(234).send('He is a')    
+});
+
+Using MongoDB for database(free database)
+!!!npm i mongoose
+Don't forget install the mongoose pkg into the nodejs dev env!!!
+How to use MongoDB, watch the video about MERN Stack Tutorial Book Store Project
+. Basically, we need to own a database cloud space from MongoDB and then we need to connect it to our backend server by code in config.js 
+Next, import { PORT, mongoDBURL } from "./config.js";
+import mongoose from 'mongoose'; in index.js file and add the code below:
+mongoose
+    .connect(mongoDBURL)
+    .then(()=>{
+        console.log('App connected to the Database');
+        app.listen(PORT, ()=>{
+            console.log(`App is listening to port: ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+!!!be careful bout the passwd, if your passwd contains any symbols such as @, & and etc., remember to replace %hex_number with it. E.g. % -> %25, ( -> %28
+*****Connected to the database already by command npm run dev
+Next step begins:
+study and using mongoose for ODM(object data modelling)
+web: https://mongoosejs.com/
+*****ODM
+Next step:
+Creating model in backend
+Creating a folder for storing models which usually named as models,
+using app.post, try&catch
+We need an API test tool and postman could be a good tool.
+For using postman, we need to know the json msg tranfer format such as:
+{
+    "pj_name": "showcases capstone web building",
+    "pj_intro": "showing visitors that the captones built by specified creators who are gonna graduate from the uni.",
+    "pj_creator": "Spiders Plus",
+    "pj_publishYear": 2025
+}
+Because we need to use Body to fill smth to post.
+Also, we need to use app.use(express.json()); to use middleware for parsing request body.
+
+Now, if we send the request to web on postman, the response will be the return response.xxxx defined by us. Also, u can find the stored data on MongoDB databse.
+
+Besides, now we need to make a get api for get all projects from database.
+
+a get api for target id project
+
+an PUT api to update the existed project
+
+a delete api to remove the target project
+
+*****Basic apis built
+Next step with refactor nodejs with express router
+This is for rearranging the api codes to make code is more concise and easy to promote. It needs to use the express router func.
+Now, we need to create another folder named as routes which contains different route files for different models.
+Rearranged routers could be robust and easier to manage the future models.
+*****route, express router
+Next step with CORS policy in Nodejs and Expressjs
+(Different Ports for frontend and backend)
+CORS policy is for cross-origin resource sharing security 
+We need to npm i cors to install a new package and then implement CORS policy
+*****CORS policy
+Next step with REACT js and Vite
+Vite: it's just as capable with Vue, Svelte, and more, making it a versatile choice for developers who work across multiple frameworks. Optimized Builds: Underneath, Vite uses Rollup for production builds, ensuring your bundles are lean and fast.
+
+Reactjs: React JS primarily shines in the realm of frontend development and is used in both frontend and backend development through frameworks like Next. js or Gatsby. js. Its declarative and component-based structure makes it a top choice for crafting dynamic user interfaces with ease and efficiency. Which is a library and frameworks like Next.js etc.
+
+Expressjs: Express.js is a web application framework for Node.js. It is widely considered the de facto standard server framework for Node.js due to its popularity and robust feature set for building web applications and APIs.
+
+Library:
+A library provides specific functionalities that you can incorporate into your application as needed. You call the library's functions to perform tasks, but you maintain control over the overall application structure and other components. React focuses specifically on the "view" layer of an application, managing how UI elements are rendered and updated.
+Framework:
+A framework, in contrast, provides a more comprehensive and structured environment for building applications. It often dictates the architecture and flow of your application, providing a set of rules and conventions that you must adhere to. Frameworks typically include solutions for various aspects like routing, data management, and build processes.
+*****Basically know the difference between Framework and Library and the basis of Reactjs and Nodejs
+
+Next step is to build frontend by creating a react project
+npm create vite@latest
+choose the project tool
+after done with tools chosen
+cd to the project folder and command with npm i to install all pkgs we need
+for nodejs(backend server)
+
+Now we can download a tailwind css by instal tailwind CSS with Vite
+
+The tailwind CSS is a tool(pkg) to Rapidly build modern websites without ever leaving your HTML.
+
+We can use react icons: npm i axios react-icon
+
+Reading code and ask gpt or check how it works by video https://www.youtube.com/watch?v=-42K44A1oMA or go to corresponding code web to learn how it works.
+
+Till now, we are up to lesson 15 Show book details in react.
+For me I may want to show the Project Intro again.
+
+To do the work on Frontend and combine the data, it would be better type npm run dev in both folders(frontend and backend) so the data can be interactive.
+***** Basic knowledge of implementing frontend and combining the data with backend
+
+Next step is to learn lesson 15
+Checking the code in frontend of both components and pages, then you will know how to implement the nodejs in reactjs framework.(tailwind.css is chosen for this frontend) 
+More detail go to others' project and video to learn&improve ur own project.
+
+in frontend, type rafce will give u a jsx format frame for buildin (cuz i installed a shortcut plugin on vscode for quickly building frontend)

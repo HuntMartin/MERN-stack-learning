@@ -1,0 +1,8 @@
+Database
+Username: MartinYuan 
+Passwd: YYUA%()
+
+
+By filling the Passwd into the connection string, we need to convert the symbols into the '%' + 'the hex number of specified symbol".
+
+E.g. YYUA%() -> YYUA%25%28%29 
