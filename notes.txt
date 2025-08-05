@@ -1,9 +1,10 @@
 MERN stack:
 
 Design: Canva(Poster based), Figma(Web app based)
+Team workflow follows agile principles and the tool is: Jira
 DB: MongoDB
-Frontend: Reactjs
-Backend: Nodejs(Expressjs)
+Frontend: Reactjs(Library)
+Backend: Nodejs(js runtime environment)(Expressjs framework, SSR - server-side rendering for SEO - search engine optimization - loading page more quickly)
 API test tool: Postman
 Deploy Cloud server: AWS
 IDE: vscode OR vscommunity
@@ -112,12 +113,16 @@ Vite: it's just as capable with Vue, Svelte, and more, making it a versatile cho
 
 Reactjs: React JS primarily shines in the realm of frontend development and is used in both frontend and backend development through frameworks like Next. js or Gatsby. js. Its declarative and component-based structure makes it a top choice for crafting dynamic user interfaces with ease and efficiency. Which is a library and frameworks like Next.js etc.
 
-Expressjs: Express.js is a web application framework for Node.js. It is widely considered the de facto standard server framework for Node.js due to its popularity and robust feature set for building web applications and APIs.
+Expressjs: Express.js is a web application framework for Node.js in backend. It is widely considered the de facto standard server framework for Node.js due to its popularity and robust feature set for building web applications and APIs.
+
+Language: 
+programming language. e.g. C#, java, C/C++, python, Rust, Javascript
 
 Library:
-A library provides specific functionalities that you can incorporate into your application as needed. You call the library's functions to perform tasks, but you maintain control over the overall application structure and other components. React focuses specifically on the "view" layer of an application, managing how UI elements are rendered and updated.
+A library provides specific functionalities that you can incorporate into your application as needed. You call the library's functions to perform tasks, but you maintain control over the overall application structure and other components. React focuses specifically on the "view" layer of an application, managing how UI elements are rendered and updated. e.g. Reactjs, Standard Library and .NET Base Class Library (BCL)
+
 Framework:
-A framework, in contrast, provides a more comprehensive and structured environment for building applications. It often dictates the architecture and flow of your application, providing a set of rules and conventions that you must adhere to. Frameworks typically include solutions for various aspects like routing, data management, and build processes.
+A framework, in contrast, provides a more comprehensive and structured environment for building applications. It often dictates the architecture and flow of your application, providing a set of rules and conventions that you must adhere to. Frameworks typically include solutions for various aspects like routing, data management, and build processes. e,g, Expressjs, nextjs, .NET, Vuejs, Angular
 *****Basically know the difference between Framework and Library and the basis of Reactjs and Nodejs
 
 Next step is to build frontend by creating a react project
@@ -142,7 +147,7 @@ To do the work on Frontend and combine the data, it would be better type npm run
 ***** Basic knowledge of implementing frontend and combining the data with backend
 
 Next step is to learn lesson 15
-Checking the code in frontend of both components and pages, then you will know how to implement the nodejs in reactjs framework.(tailwind.css is chosen for this frontend) 
+Checking the code in frontend of both components and pages, then you will know how to run the js code on the nodejs with  reactjs Library.(tailwind.css is chosen for this frontend) 
 More detail go to others' project and video to learn&improve ur own project.
 
 in frontend, type rafce will give u a jsx format frame for buildin (cuz i installed a shortcut plugin on vscode for quickly building frontend)
